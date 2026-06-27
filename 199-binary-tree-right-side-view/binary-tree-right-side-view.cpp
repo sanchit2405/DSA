@@ -12,8 +12,8 @@
 class Solution {
 public:
     vector<int> rightSideView(TreeNode* root) {
-        vector<int> res;  // declared to store the answer
-        f(root, 0,res);
+        vector<int> res;
+        f(root,0,res);
         return res;
     }
     void f(TreeNode* root, int level, vector<int> &res){
@@ -23,7 +23,7 @@ public:
             res.push_back(root->val);
         }
 
-        f(root->right,level+1,res);
-        f(root->left,level+1,res);
+        f(root->right, level+1, res);
+        f(root->left, level+1, res);
     }
 };
