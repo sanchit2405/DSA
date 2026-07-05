@@ -6,12 +6,10 @@ public:
         for(int i =0;i<n;i++){
             if(nums[i] == 1){
                 cnt++;
-                if(maxi < cnt){
-                    maxi++;
-                }
+               maxi = max(cnt,maxi);
             }
             else if(nums[i] == 0){
-                maxi = max(cnt,maxi);
+    
                 cnt = 0;
             }
         }
