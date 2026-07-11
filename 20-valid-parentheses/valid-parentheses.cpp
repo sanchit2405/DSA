@@ -1,0 +1,23 @@
+class Solution {
+    private:
+    stack<char> st;
+public:
+    bool isValid(string s) {
+        for(int i = 0;i<s.size();i++){
+            if(s[i] == '(' || s[i] == '{' || s[i] == '['){
+                st.push(s[i]);
+            }
+            else{
+                if(st.empty()) return false;
+
+                if( (s[i] == ')' && st.top() == '(')  || (s[i] == '}' && st.top() == '{') || (s[i] == ']' && st.top() == '[')){
+                    st.pop();
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        return st.empty();  // ye samaj nahi aara tha st.empty()
+    }
+};
