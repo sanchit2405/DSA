@@ -12,22 +12,18 @@
 class Solution {
 public:
     int countNodes(TreeNode* root) {
-        // int cnt = 0;
-        // cntnodes(cnt, root);
-        // return cnt;
-
-        if(root == NULL) return 0;
-
-        int l = countNodes(root->left);
-        int r = countNodes(root->right);
-
-        return 1 + l + r;
-    
-    // void cntnodes(int cnt, TreeNode* root){
-    //     if(root == NULL) return;
-
-    //     cnt++;
-    //     cntnodes(cnt, root->left);
-    //     cntnodes(cnt, root->right);
+        int cnt = 0;
+        cntnodes(cnt, root);
+        return cnt;
     }
+        
+    
+    void cntnodes(int &cnt, TreeNode* root){
+        if(root == NULL) return;
+
+        cnt++;
+        cntnodes(cnt, root->left);
+        cntnodes(cnt, root->right);
+    }
+    
 };
