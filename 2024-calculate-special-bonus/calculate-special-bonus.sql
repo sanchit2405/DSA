@@ -1,8 +1,8 @@
 # Write your MySQL query statement below
-SELECT employee_id,
+SELECT e.employee_id,
 CASE 
-    WHEN employee_id%2 != 0 AND name NOT LIKE 'M%' THEN salary
+    WHEN e.employee_id%2 != 0 AND e.name NOT LIKE 'M%' THEN e.salary
     ELSE 0
 END AS bonus
-FROM Employees
-ORDER BY employee_id;
+FROM Employees e
+ORDER BY e.employee_id;
